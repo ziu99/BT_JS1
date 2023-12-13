@@ -1,22 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS day 1</title>
+    <title>BTJSB1</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
-
   <body>
+    <!-- ? CÂU 1 :TÍNH LƯƠNG  -->
+
+    <div class="container form-group pt-5">
+      <h1 style="color: darkgreen">CÂU 1 :TÍNH LƯƠNG</h1>
+      <p>Lương Một Ngày</p>
+      <input
+        disabled
+        type="number"
+        id="luongMotNgay"
+        class="form-control w-25"
+        placeholder="100.000 đ"
+      />
+      <br />
+      <p>Số Ngày Làm</p>
+      <input
+        type="number"
+        id="ngayLam"
+        class="form-control w-25"
+        placeholder="Số Ngày Làm"
+        min="0"
+      />
+      <br />
+      <button
+        type="button"
+        onclick="tinhLuong()"
+        id="btnLuong"
+        class="btn btn-success"
+      >
+        Tính Lương
+      </button>
+      <br /><br />
+      Kết quả : <span id="ketQua"></span>
+    </div>
+
+    <br /><br /><br />
+    <hr />
+
+    <!-- ? CÂU 2: TÍNH GIÁ TRỊ TRUNG BÌNH -->
+
+    <div class="container form-group pt-5">
+      <h1 style="color: darkgreen">CÂU 2: TÍNH GIÁ TRỊ TRUNG BÌNH</h1>
+      <input
+        type="number"
+        id="soThu1"
+        class="form-control w-25"
+        placeholder="Số Thứ 1"
+      /><br />
+      <input
+        type="number"
+        id="soThu2"
+        class="form-control w-25"
+        placeholder="Số Thứ 2"
+      /><br />
+      <input
+        type="number"
+        id="soThu3"
+        class="form-control w-25"
+        placeholder="Số Thứ 3"
+      /><br />
+      <input
+        type="number"
+        id="soThu4"
+        class="form-control w-25"
+        placeholder="Số Thứ 4"
+      /><br />
+      <input
+        type="number"
+        id="soThu5"
+        class="form-control w-25"
+        placeholder="Số Thứ 5"
+      /><br />
+      <button
+        onclick="tinhTrungBinh()"
+        type="button"
+        id="btnTrungBinh"
+        class="btn btn-success"
+      >
+        Tính Trung Bình</button
+      ><br /><br />
+      Kết quả : <span id="ketQuaTrungBinh" class="font-weight-bold"></span>
+    </div>
+
+    <br /><br /><br />
+    <hr />
+
+    <!-- ? CÂU 3 : QUY ĐỔI TIỀN -->
+
+    <div class="container form-group pt-5">
+      <h1 style="color: darkgreen">CÂU 3 : QUY ĐỔI TIỀN</h1>
+      <br />
+
+      <input
+        type="number"
+        id="nhapTien"
+        class="form-control w-25"
+        placeholder="Nhập số tiền USD"
+        min="0"
+      /><br />
+
+      <button
+        onclick="doiTien()"
+        type="button"
+        id="btnDoiTien"
+        class="btn btn-success"
+      >
+        Quy Đổi Tiền
+      </button>
+      <br /><br />
+
+      Kết quả : <span id="ketQuaDoiTien" class="font-weight-bold"></span>
+    </div>
+    <br /><br /><br />
+    <hr />
+
+    <!-- ? CÂU 4 : TÍNH DIỆN TÍCH VÀ CHU VI HÌNH CHỮ NHẬT -->
+
+    <div class="container form-group pt-5">
+      <h1 style="color: darkgreen">
+        CÂU 4 : TÍNH DIỆN TÍCH VÀ CHU VI HÌNH CHỮ NHẬT
+      </h1>
+      <br />
+
+      <input
+        type="number"
+        id="nhapChieuDai"
+        class="form-control w-25"
+        placeholder="Nhập Chiều Dài"
+        min="0"
+      /><br />
+      <input
+        type="number"
+        id="nhapChieuRong"
+        class="form-control w-25"
+        placeholder="Nhập Chiều Rộng"
+        min="0"
+      /><br />
+
+      <button
+        onclick="tinhCvDt()"
+        type="button"
+        id="btnTinhCvDt"
+        class="btn btn-success"
+      >
+        Tính
+      </button>
+      <br /><br />
+
+      Kết quả : <br />
+      <span id="ketQuaTinhCvDt" class="font-weight-bold"></span>
+    </div>
+
+    <br /><br /><br />
+    <hr />
+
+    <!-- ? CÂU 5 :TÍNH TỔNG 2 CHỮ SỐ-->
+    <div class="container form-group pt-5">
+      <h1 style="color: darkgreen">CÂU 5 :TÍNH TỔNG 2 CHỮ SỐ</h1>
+      <br />
+
+      <input
+        type="number"
+        id="nhap2ChuSo"
+        class="form-control w-25"
+        placeholder="Nhập 2 số"
+        min="0"
+      /><br />
+
+      <button
+        onclick="tong2So()"
+        type="button"
+        id="btnTong2So"
+        class="btn btn-success"
+      >
+        Tính tổng 2 số
+      </button>
+      <br /><br />
+
+      Kết quả : <span id="ketQuaTong2So" class="font-weight-bold"></span>
+    </div>
+    <br /><br /><br />
+    <hr />
 
 
-    <!-- ? CÂU 1 -->
-
-    <input disabled type="number" id="wage" placeholder="lương 1 ngày = 100000"   />
-    <br />
-    <input type="number" id="day" placeholder="Số ngày làm" />
-    <br />
-    <button onclick="submit" id="btn-submit">Tính lương</button>
-    <h1 id="nhan"></h1>
 
 
 
@@ -24,21 +208,28 @@
 
 
 
-    
-    <!-- ? BS4 JS -->
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-      crossorigin="anonymous"
-    ></script>
 
-    <!-- ? index JS -->
+
+
     <script src="./js/index.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
